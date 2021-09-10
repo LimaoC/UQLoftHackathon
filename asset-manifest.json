@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/uqloft/static/js/main.ded71800.chunk.js",
-    "main.js.map": "/uqloft/static/js/main.ded71800.chunk.js.map",
+    "main.js": "/uqloft/static/js/main.75fd5a1e.chunk.js",
+    "main.js.map": "/uqloft/static/js/main.75fd5a1e.chunk.js.map",
     "runtime-main.js": "/uqloft/static/js/runtime-main.14e6900a.js",
     "runtime-main.js.map": "/uqloft/static/js/runtime-main.14e6900a.js.map",
     "static/js/2.ca551465.chunk.js": "/uqloft/static/js/2.ca551465.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.14e6900a.js",
     "static/js/2.ca551465.chunk.js",
-    "static/js/main.ded71800.chunk.js"
+    "static/js/main.75fd5a1e.chunk.js"
   ]
 }
