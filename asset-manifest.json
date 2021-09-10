@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/UQLoft/static/js/main.8edb23fc.chunk.js",
-    "main.js.map": "/UQLoft/static/js/main.8edb23fc.chunk.js.map",
+    "main.js": "/UQLoft/static/js/main.0d88130f.chunk.js",
+    "main.js.map": "/UQLoft/static/js/main.0d88130f.chunk.js.map",
     "runtime-main.js": "/UQLoft/static/js/runtime-main.6b6eff3a.js",
     "runtime-main.js.map": "/UQLoft/static/js/runtime-main.6b6eff3a.js.map",
-    "static/js/2.14287564.chunk.js": "/UQLoft/static/js/2.14287564.chunk.js",
-    "static/js/2.14287564.chunk.js.map": "/UQLoft/static/js/2.14287564.chunk.js.map",
+    "static/js/2.e5575009.chunk.js": "/UQLoft/static/js/2.e5575009.chunk.js",
+    "static/js/2.e5575009.chunk.js.map": "/UQLoft/static/js/2.e5575009.chunk.js.map",
     "index.html": "/UQLoft/index.html",
-    "static/js/2.14287564.chunk.js.LICENSE.txt": "/UQLoft/static/js/2.14287564.chunk.js.LICENSE.txt"
+    "static/js/2.e5575009.chunk.js.LICENSE.txt": "/UQLoft/static/js/2.e5575009.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6b6eff3a.js",
-    "static/js/2.14287564.chunk.js",
-    "static/js/main.8edb23fc.chunk.js"
+    "static/js/2.e5575009.chunk.js",
+    "static/js/main.0d88130f.chunk.js"
   ]
 }
