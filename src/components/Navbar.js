@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import PersonIcon from '@material-ui/icons/Person';
+import InfoIcon from '@material-ui/icons/Info';
 
 
 export default function Navbar() {
@@ -8,17 +10,25 @@ export default function Navbar() {
         <NavbarStyled>
             <div className="left">
                 <NavLink to="/about">
-                    <h1>ABOUT</h1>
+                    <span>
+                        <InfoIcon className="about" />
+                        ABOUT
+                    </span>
                 </NavLink>
             </div>
             <div className="middle">
                 <NavLink to="/">
-                    <h1>UQLoft</h1>
+                    <span>
+                        <img className="logo" src={process.env.PUBLIC_URL + '/assets/logowhite.svg'} alt="UQLoft" />
+                    </span>
                 </NavLink>
             </div>
             <div className="right">
                 <NavLink to="/login">
-                    <h1>LOGIN</h1>
+                    <span>
+                        <PersonIcon className="login" />
+                        LOGIN
+                    </span>
                 </NavLink>
             </div>
         </NavbarStyled>
@@ -28,10 +38,10 @@ export default function Navbar() {
 
 const NavbarStyled = styled.nav`
     // positioning
-    position: fixed;
+    position: sticky;
     z-index: 999;
     // display
-    height: 4rem;
+    height: 5rem;
     width: 100%;
     display: flex;
     align-items: center;
@@ -41,12 +51,28 @@ const NavbarStyled = styled.nav`
     background-color: var(--purple);
 
     div {
-        h1 {
+        span {
+            // display
+            display: flex;
+            align-items: center;
             // colour
             color: var(--white);
             // text
             font-size: 1.5rem;
             font-weight: 300;
+
+            > * {
+                margin-right: 0.5rem;
+            }
+        }
+
+        .about, .login {
+            color: var(--white);
+        }
+
+        .logo {
+            height: 4.5rem;
+            width: auto;
         }
     }
 `;
