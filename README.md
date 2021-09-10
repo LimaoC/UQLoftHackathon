@@ -13,6 +13,6 @@
 - [ReactJS](https://reactjs.org/)
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 
-## Links to How-to websites
-To access the database connected to this repository, you'll need to download and access gitHub desktop cite:
-https://www.red-gate.com/hub/product-learning/sql-source-control/github-and-sql-source-control
+## Linking the database to the git-repository
+Some of these resources will also be useful with regards to uploading/editing data in the database. 
+- download SSMS (SQL Server management studio) https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15
