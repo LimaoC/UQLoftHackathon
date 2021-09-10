@@ -9,6 +9,10 @@
 - Each test page will have a view paper option (pdf viewer), view answers/discussion
 - Each question is collapsable
 
+## Tech stack
+- [ReactJS](https://reactjs.org/)
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+
 ## Links to How-to websites
 To access the database connected to this repository, you'll need to download and access gitHub desktop cite:
 https://www.red-gate.com/hub/product-learning/sql-source-control/github-and-sql-source-control
