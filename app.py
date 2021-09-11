@@ -5,6 +5,7 @@ from db import is_valid_course
 
 app = Flask(__name__)
 CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route("/get_courses", methods = ["GET", "POST"])
 def get_courses():
