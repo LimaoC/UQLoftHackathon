@@ -1,7 +1,11 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, send_file
 import requests
 from flask_cors import CORS
 from helpers import is_valid_course, get_ecp_details, get_paper_data
+
+import os
+
+THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 
 app = Flask(__name__)
 CORS(app)
@@ -34,5 +38,11 @@ def get_papers():
 def get_paper():
     course_code = request.json["courseCode"]
     paper = request.json["paper"]
-    print(course_code, paper)
-    return jsonify("YOLO")
+    year, sem = paper.split(" - ")
+    file = f"{course_code}_{year}_sem{sem}"
+    return jsonify("lewisjluck.pythonaywhere.com/paper?file=" + file)
+
+@app.route("/paper", methods = ["GET", "POST"])
+def serve_paper():
+    file = request.args.get("file")
+    return send_file(os.path.join(THIS_FOLDER, ""), mimetype="application/pdf", cache_timeout=0)
