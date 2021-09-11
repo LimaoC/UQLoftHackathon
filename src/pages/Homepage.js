@@ -1,11 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
-export default function Homepage() {
+export default function Homepage({redirect}) {
+    const [code, setCode] = useState("");
+    const [valid, setValid] = useState(false);
+    let history = useHistory();
+
+    useEffect(() => {
+        if (valid) {
+            console.log(code);
+            redirect(code);
+            history.push("/courses/");
+        } else {
+            console.log("Error");
+        }
+    }, [valid])
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        const data = { courseCode: code };
+        fetch('https://lewisjluck.pythonanywhere.com/is_course_valid', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then(res => res.json())
+            .then(res => setValid(res));
+    }
+
+    function handleValue(e) {
+        setCode(e.target.value);
+    }
+
     return (
         <HomepageStyled>
             <img className="logo" src={process.env.PUBLIC_URL + '/assets/logocolour.svg'} alt="UQLoft" />
             <h2>Crowd-sourced solutions for all your papers.</h2>
+            <form action="" onSubmit={handleSubmit}>
+                <fieldset>
+                    <label>
+                        <input className="search" name="search" id="searchicon" type="image" src={process.env.PUBLIC_URL + '/assets/search.svg'} name="Submit" widht="20" height="20" alt="Search" />
+                        <input className="searchfill" name="name" type="text" placeholder="Find your course..." onChange={handleValue}/>
+                    </label>
+                </fieldset>
+            </form>
             <div className="wrapper">
                 <div className="left">
                     <h3>Popular right now</h3>
@@ -82,19 +123,33 @@ export default function Homepage() {
 
 
 const HomepageStyled = styled.header`
+    #searchicon {
+        padding-bottom: 0px;
+    }
+
+    form {
+        margin-top: 1.5rem;
+        input {
+            border: none;
+            padding: 0.3rem 0.5rem;
+        }
+        fieldset {
+            margin: auto;
+            width: 80%;
+            padding: 0.5rem 0rem;
+            border-width: 4px;
+            border-radius: 6px;
+            border-color: grey;     
+        }
+
+        }
+    }
+
     .logo {
         display: block;
         margin: auto auto;
         height: 10rem;
         margin-top: 1rem;
-    }
-
-    h1 {
-        // display
-        padding-top: 1rem;
-        // text
-        text-align: center;
-        font-size: 3rem;
     }
 
     h2 {
@@ -114,7 +169,7 @@ const HomepageStyled = styled.header`
     }
 
     .wrapper {
-        margin-top: 8rem; // temporary
+        /* margin-top: 8rem; // temporary */
         display: flex;
         justify-content: center;
         width: 100%;
@@ -130,12 +185,12 @@ const HomepageStyled = styled.header`
                 grid-template-columns: auto auto auto;
 
                 .item {
-                    background-color: var(--purple2);
+                    background-color: var(--red);
                     text-align: center;
                     font-size: 1.5rem;
                     color: var(--white);
                     border-radius: 1rem;
-                    padding: 1rem;
+                    padding: 0.5rem 0rem 0.5rem 0rem;
                     margin: 1rem;
 
                     &:hover {
