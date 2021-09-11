@@ -42,7 +42,7 @@ export default function Homepage({redirect}) {
             <form action="" onSubmit={handleSubmit}>
                 <fieldset>
                     <label>
-                        <input name="search" id="searchicon" type="image" src={process.env.PUBLIC_URL + '/assets/search.svg'} name="Submit" widht="20" height="20" alt="Search" />
+                        {/* <img src={process.env.PUBLIC_URL + '/assets/search.svg'} /> */}
                         <input name="name" type="text" placeholder="Find your course..." onChange={handleValue}/>
                     </label>
                 </fieldset>
@@ -123,26 +123,28 @@ export default function Homepage({redirect}) {
 
 
 const HomepageStyled = styled.header`
-    #searchicon {
-    }
-
     form {
         margin-top: 1.5rem;
+
         input {
             border: none;
             padding: 0.3rem 0.5rem;
             align-items: center;
+            width: 100%;
         }
+
+        input:focus, textarea:focus {
+                outline:none;
+            }
+
         fieldset {
             margin: auto;
             width: 80%;
             padding: 0.5rem 0rem;
             border-width: 4px;
             border-radius: 6px;
-            border-color: grey;     
+            border-color: grey;
         }
-
-        
     }
 
     .logo {
