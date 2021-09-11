@@ -21,9 +21,9 @@ def is_valid_course(query_course_code):
     print(query_course_code)
     db = open_db()
     matches = []
-    products =  db.execute("SELECT * FROM papers WHERE course_code LIKE ?", ("%" + query_course_code + "%",)).fetchall()
-    print(products)
-    if products:
+    papers =  db.execute("SELECT * FROM papers WHERE course_code LIKE ?", ("%" + query_course_code.lower() + "%",)).fetchall()
+    print(papers)
+    if papers:
         return True
     else:
         return False
@@ -53,5 +53,3 @@ def update_product(product):
     db.commit()
     close_db(db)
     return response
-
-print(is_valid_course("csse2001"))
