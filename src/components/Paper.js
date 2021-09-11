@@ -22,9 +22,10 @@ export default function Paper({courseCode, paper}) {
 
     return (
         <PaperStyled>
-            <iframe
+            {/* <iframe
                 src={"https://docs.google.com/gview?url=" + pdfData + "&embedded=true"}
-                frameborder="0" />
+                frameBorder="0" /> */}
+                <iframe src="https://drive.google.com/file/d/1covLxYcx06oHm8mo2abSR9BK_ahRG11a/preview" width="640" height="480" allow="autoplay"></iframe>
         </PaperStyled>
     );
 }
