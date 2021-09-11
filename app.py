@@ -23,7 +23,7 @@ def get_papers():
     url, course_name, course_description = get_ecp_details(code)
     papers = get_paper_data(code)
     data = {
-        "ecp_link" : url, 
+        "ecp_link" : url,
         "course_name": course_name,
         "course_description": course_description,
         "papers": papers
