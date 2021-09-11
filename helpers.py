@@ -41,7 +41,7 @@ def get_paper_data(query_course_code):
 def get_ecp_details(course_code):
     url = "https://my.uq.edu.au/programs-courses/course.html?course_code=" + course_code.upper()
     if course_code.lower() == "csse1001":
-        return (url, 'Introduction to Software Engineering (CSSE1001)', '''Introduction to Software Engineering through programming with particular focus
+        return (url, 'Introduction to Software Engineering', '''Introduction to Software Engineering through programming with particular focus
 on the fundamentals of computing & programming, using an exploratory problem-based approach. Building abstractions with procedures, data & objects; data modelling; desig
 ning, coding & debugging programs of increasing complexity''')
     url = "https://my.uq.edu.au/programs-courses/course.html?course_code=" + course_code.upper()
