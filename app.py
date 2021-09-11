@@ -36,11 +36,11 @@ def get_papers():
 
 @app.route("/get_paper", methods = ["GET", "POST"])
 def get_paper():
-    course_code = request.json["courseCode"]
-    paper = request.json["paper"]
+    course_code = request.json["courseCode"].lower()
+    paper = request.json["paper"].lower()
     year, sem = paper.split(" - ")
-    file = f"{course_code}_{year}_sem{sem}"
-    return jsonify("https://lewisjluck.pythonaywhere.com/paper?file=" + file + ".pdf")
+    file = f"{course_code}_{year.lower()}_sem{sem.lower()}.pdf"
+    return jsonify("lewisjluck.pythonaywhere.com/paper?file=" + file)
 
 @app.route("/paper", methods = ["GET", "POST"])
 def serve_paper():
