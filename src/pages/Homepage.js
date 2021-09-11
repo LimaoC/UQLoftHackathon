@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
-export default function Homepage() {
+export default function Homepage({redirect}) {
     const [value, setValue] = useState("");
+    let history = useHistory();
 
     function handleSubmit(e) {
         e.preventDefault();
-        const data = { name: value };
-        console.log(value);
+        const data = { courseCode: value };
         fetch('https://lewisjluck.pythonanywhere.com/get_courses', {
             method: "POST",
             headers: {
@@ -16,8 +17,15 @@ export default function Homepage() {
             body: JSON.stringify(data),
         })
             .then(res => res.json())
-            .then(res => console.log(res));
+            .then(res => setValue(res));
+
+        if(value) {
+            console.log(data.courseCode);
+            redirect(data.courseCode);
+            history.push("/courses/");
+        }
     }
+
     function handleValue(e) {
         setValue(e.target.value);
     }
@@ -29,8 +37,7 @@ export default function Homepage() {
             <form action="" onSubmit={handleSubmit}>
                 <fieldset>
                     <label>
-                        <p>Name</p>
-                        <input name="name" type="text" onChange={handleValue}/>
+                        <input name="name" type="text" placeholder="Search..." onChange={handleValue}/>
                     </label>
                 </fieldset>
                 <button type="submit">Submit</button>
