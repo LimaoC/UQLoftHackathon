@@ -22,7 +22,7 @@ def get_papers():
     data = {
         "course_name": "Introduction to Computer Systems",
         "course_description": "Richard Thomas is Cool" ,
-        "papers": [("2018", 2), ("2017", 1)]
+        "papers": [{"year": 2018, "sem": 2}, {"year": 2019, "sem": 1}]
     }
     print(data)
     return jsonify(data)
