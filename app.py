@@ -10,5 +10,6 @@ def get_courses():
     if request.method == "GET":
         return jsonify("hello")
     else:
-        req = request.json
-        print(req)
+        code = request.json["courseCode"]
+        print(code)
+        return jsonify("hello"")
