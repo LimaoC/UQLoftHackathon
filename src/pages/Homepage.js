@@ -187,7 +187,7 @@ const HomepageStyled = styled.header`
                 grid-template-columns: auto auto auto;
 
                 .item {
-                    background-color: var(--red);
+                    background-color: var(--purple2);
                     text-align: center;
                     font-size: 1.5rem;
                     color: var(--white);
