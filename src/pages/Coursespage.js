@@ -9,6 +9,7 @@ export default function Coursespage() {
 
     return (
         <div>
+            Courses page
             {courses}
         </div>
     );
