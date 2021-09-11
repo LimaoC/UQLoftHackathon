@@ -22,7 +22,7 @@ export default function Paper({ courseCode, paper}) {
 
     return (
         <PaperStyled>
-            <h1> BLACK</h1>
+            <h1> {pdfData}</h1>
         </PaperStyled>
     )
 }
