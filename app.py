@@ -24,4 +24,5 @@ def get_papers():
         "course_description": "Richard Thomas is Cool" ,
         "papers": [("2018", 2), ("2017", 1)]
     }
+    print(data)
     return jsonify(data)
