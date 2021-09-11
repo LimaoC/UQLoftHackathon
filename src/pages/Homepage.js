@@ -3,13 +3,24 @@ import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function Homepage({redirect}) {
-    const [value, setValue] = useState("");
+    const [code, setCode] = useState("");
+    const [valid, setValid] = useState(false);
     let history = useHistory();
+
+    useEffect(() => {
+        if (valid) {
+            console.log(code);
+            redirect(code);
+            history.push("/courses/");
+        } else {
+            console.log("Error");
+        }
+    }, [valid])
 
     function handleSubmit(e) {
         e.preventDefault();
-        const data = { courseCode: value };
-        fetch('https://lewisjluck.pythonanywhere.com/get_courses', {
+        const data = { courseCode: code };
+        fetch('https://lewisjluck.pythonanywhere.com/is_course_valid', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -17,17 +28,11 @@ export default function Homepage({redirect}) {
             body: JSON.stringify(data),
         })
             .then(res => res.json())
-            .then(res => setValue(res));
-
-        if(value) {
-            console.log(data.courseCode);
-            redirect(data.courseCode);
-            history.push("/courses/");
-        }
+            .then(res => setValid(res));
     }
 
     function handleValue(e) {
-        setValue(e.target.value);
+        setCode(e.target.value);
     }
 
     return (
@@ -144,14 +149,6 @@ const HomepageStyled = styled.header`
         margin: auto auto;
         height: 10rem;
         margin-top: 1rem;
-    }
-
-    h1 {
-        // display
-        padding-top: 1rem;
-        // text
-        text-align: center;
-        font-size: 3rem;
     }
 
     h2 {

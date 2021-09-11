@@ -7,7 +7,7 @@ import Coursespage from './pages/Coursespage';
 import Course from './components/Course';
 
 export default function App() {
-    const [course, setCourse] = useState("No course selected.");
+    const [course, setCourse] = useState("");
 
     return (
         <div id="app" className="app">
@@ -20,11 +20,9 @@ export default function App() {
                         <Aboutpage />
                     </Route>
                     <Route path="/courses" exact>
-                        <Course courseCode={course} />
+                        {!course && <Coursespage />}
+                        {course && <Course courseCode={course} />}
                     </Route>
-                    {/* <Route path={"/courses/" + course} exact>
-                        <Course courseCode={course} />
-                    </Route> */}
                 </Switch>
         </div>
     );
