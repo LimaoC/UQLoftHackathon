@@ -1,11 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
-export default function Homepage() {
+export default function Homepage({redirect}) {
+    const [value, setValue] = useState("");
+    let history = useHistory();
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        const data = { courseCode: value };
+        fetch('https://lewisjluck.pythonanywhere.com/get_courses', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then(res => res.json())
+            .then(res => setValue(res));
+
+        if(value) {
+            console.log(data.courseCode);
+            redirect(data.courseCode);
+            history.push("/courses/");
+        }
+    }
+
+    function handleValue(e) {
+        setValue(e.target.value);
+    }
+
     return (
         <HomepageStyled>
             <img className="logo" src={process.env.PUBLIC_URL + '/assets/logocolour.svg'} alt="UQLoft" />
             <h2>Crowd-sourced solutions for all your papers.</h2>
+            <form action="" onSubmit={handleSubmit}>
+                <fieldset>
+                    <label>
+                        <input name="name" type="text" placeholder="Search..." onChange={handleValue}/>
+                    </label>
+                </fieldset>
+                <button type="submit">Submit</button>
+            </form>
             <div className="wrapper">
                 <div className="left">
                     <h3>Popular right now</h3>
