@@ -21,19 +21,59 @@ export default function Paper({courseCode, paper}) {
       }, []);
 
     return (
+
         <PaperStyled>
             {/* <iframe
                 src={"https://docs.google.com/gview?url=" + pdfData + "&embedded=true"}
                 frameBorder="0" /> */}
-                <iframe src="https://drive.google.com/file/d/1covLxYcx06oHm8mo2abSR9BK_ahRG11a/preview" width="640" height="480" allow="autoplay"></iframe>
+                <h1>
+                    CSSE1001 / Sem 2 2019
+                </h1>
+                <div className="main_cont">
+                    <div className="grid-el">
+                        <iframe src="https://drive.google.com/file/d/1Trt72QK0zBZUGVjB0qF7H8--xai72RNH/preview" width="640" height="480" allow="autoplay"></iframe>
+                    </div>
+                    <div className="grid-el">
+                        <h2>
+                            Solutions
+                        </h2>
+                    </div>
+                </div>
+
         </PaperStyled>
     );
 }
 
+
 const PaperStyled = styled.div`
     iframe {
-        margin: 10px;
-        width: 50%;
+        margin-top: 2%;
+        margin-left: 5%;
+        width: 100%;
         height: 80vh;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-top: 2%;
+        margin-left: 5%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+
+    }
+
+    .main_cont {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        background-color: white;
+
+    }
+
+    .grid-el {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        padding: 5%;
     }
 `;
