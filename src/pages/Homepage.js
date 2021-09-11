@@ -4,16 +4,26 @@ import styled from 'styled-components';
 
 export default function Homepage({redirect}) {
     const [code, setCode] = useState("");
+    const [searched, setSearched] = useState(false);
     const [valid, setValid] = useState(false);
+    const popularCourses = [
+        "csse2010", "engg1300", "scie1000", "math1051", "csse1001", "stat1301"
+    ];
+    const topContributors = [
+        { Name: "Richard Thomas", Posts: 325 },
+        { Name: "Sam Kault", Posts: 323 },
+        { Name: "Sam Kault's alt account", Posts: 258 },
+        { Name: "Chamith", Posts: 137 }
+    ];
     let history = useHistory();
 
     useEffect(() => {
         if (valid) {
             console.log(code);
             redirect(code);
-            history.push("/courses/");
+            history.push("/courses/" + code);
         } else {
-            console.log("Error");
+            console.log("Invalid course");
         }
     }, [valid])
 
@@ -28,7 +38,8 @@ export default function Homepage({redirect}) {
             body: JSON.stringify(data),
         })
             .then(res => res.json())
-            .then(res => setValid(res));
+            .then(res => setValid(res))
+            .then(() => setSearched(true));
     }
 
     function handleValue(e) {
@@ -46,73 +57,33 @@ export default function Homepage({redirect}) {
                     </label>
                 </fieldset>
             </form>
+            <div className="invalidsearch" style={{color: searched ? "red" : "white"}}>
+                Invalid course code
+            </div>
             <div className="wrapper">
                 <div className="left">
                     <h3>Popular right now</h3>
                     <div className="grid">
-                        <div className="item">
-                            CSSE2010
-                        </div>
-                        <div className="item">
-                            ENGG1300
-                        </div>
-                        <div className="item">
-                            SCIE1000
-                        </div>
-                        <div className="item">
-                            MATH1051
-                        </div>
-                        <div className="item">
-                            CSSE1001
-                        </div>
-                        <div className="item">
-                            STAT1301
-                        </div>
+                        {popularCourses.map((course) =>
+                            <div className="course">
+                                {course.toUpperCase()}
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div className="right">
                     <h3>Top contributors</h3>
                     <ul className="list">
-                        <li>
-                            <div className="left">
-                                Richard Thomas
-                            </div>
-                            <div className="right">
-                                325 posts
-                            </div>
-                        </li>
-                        <li>
-                            <div className="left">
-                                Poh
-                            </div>
-                            <div className="right">
-                                323 posts
-                            </div>
-                        </li>
-                        <li>
-                            <div className="left">
-                                Sam Kault
-                            </div>
-                            <div className="right">
-                                258 posts
-                            </div>
-                        </li>
-                        <li>
-                            <div className="left">
-                                Chamith the madlad
-                            </div>
-                            <div className="right">
-                                200 posts
-                            </div>
-                        </li>
-                        <li>
-                            <div className="left">
-                                Sam Kault's alt account
-                            </div>
-                            <div className="right">
-                                193 posts
-                            </div>
-                        </li>
+                        {topContributors.map((contributor) =>
+                            <li>
+                                <div className="name">
+                                    {contributor.Name}
+                                </div>
+                                <div className="posts">
+                                    {contributor.Posts}
+                                </div>
+                            </li>
+                        )}
                     </ul>
                 </div>
             </div>
@@ -122,13 +93,24 @@ export default function Homepage({redirect}) {
 
 
 const HomepageStyled = styled.header`
+    .logo {
+        display: block;
+        margin: auto auto;
+        height: 10rem;
+        margin-top: 1rem;
+    }
+
+    .invalidsearch {
+        margin-top: 0.5rem;
+        text-align: center;
+        width: 100%;
+        color: red;
+    }
+
     form {
-        margin-top: 1.5rem;
-        }
         input {
             border: none;
             padding: 0.3rem 0.5rem;
-            align-items: center;
             width: 100%;
             background-color: white;
         }
@@ -145,39 +127,28 @@ const HomepageStyled = styled.header`
 
         fieldset {
             margin: auto;
-            width: 80%;
+            width: 40%;
             padding: 0.5rem 0rem;
-            border-width: 3px;
-            border-radius: 6px;
-            border-color: black;
+            border-radius: 0.5rem;
+            border-color: var(--black);
         }
     }
 
-    .logo {
-        display: block;
-        margin: auto auto;
-        height: 10rem;
-        margin-top: 1rem;
-    }
-
     h2 {
-        // display
-        padding-top: 2rem;
-        // text
-        text-align: center;
         font-size: 2rem;
+        margin-bottom: 3%;
+        text-align: center;
         font-weight: 500;
     }
 
     h3 {
-        // text
-        text-align: center;
         font-size: 1.5rem;
+        margin-top: 3%;
+        text-align: center;
         font-weight: 500;
     }
 
     .wrapper {
-        /* margin-top: 8rem; // temporary */
         display: flex;
         justify-content: center;
         width: 100%;
@@ -186,13 +157,15 @@ const HomepageStyled = styled.header`
             width: 50%;
             margin: 0 auto;
             padding: 2rem;
+        }
 
+        .left {
             .grid {
                 display: grid;
                 width: 100%;
                 grid-template-columns: auto auto auto;
 
-                .item {
+                .course {
                     background-color: var(--purple2);
                     text-align: center;
                     font-size: 1.5rem;
@@ -203,14 +176,22 @@ const HomepageStyled = styled.header`
 
                     &:hover {
                         cursor: pointer;
+                        filter: brightness(120%);
+                        transition: filter 0.5s;
+                    }
+
+                    &:active {
+                        transform: translateY(3px);
                     }
                 }
             }
+        }
 
+        .right {
             .list {
                 list-style-type: none;
 
-                > * {
+                li {
                     margin: 1rem;
                     display: flex;
                     justify-content: space-between;
