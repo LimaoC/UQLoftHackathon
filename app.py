@@ -44,6 +44,6 @@ def get_paper():
 
 @app.route("/paper", methods = ["GET", "POST"])
 def serve_paper():
-    file = request.args.get("file")
+    file = "/papers/" + request.args.get("file")
     print(file)
     return send_file(os.path.join(THIS_FOLDER, file), mimetype="application/pdf", cache_timeout=0)
