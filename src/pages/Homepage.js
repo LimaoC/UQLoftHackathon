@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 export default function Homepage({redirect}) {
     const [code, setCode] = useState("");
+    const [searched, setSearched] = useState(false);
     const [valid, setValid] = useState(false);
     const popularCourses = [
         "csse2010", "engg1300", "scie1000", "math1051", "csse1001", "stat1301"
@@ -37,7 +38,8 @@ export default function Homepage({redirect}) {
             body: JSON.stringify(data),
         })
             .then(res => res.json())
-            .then(res => setValid(res));
+            .then(res => setValid(res))
+            .then(() => setSearched(true));
     }
 
     function handleValue(e) {
@@ -55,6 +57,9 @@ export default function Homepage({redirect}) {
                     </label>
                 </fieldset>
             </form>
+            <div className="invalidsearch" style={{color: searched ? "red" : "white"}}>
+                Invalid course code
+            </div>
             <div className="wrapper">
                 <div className="left">
                     <h3>Popular right now</h3>
@@ -95,9 +100,14 @@ const HomepageStyled = styled.header`
         margin-top: 1rem;
     }
 
+    .invalidsearch {
+        margin-top: 0.5rem;
+        text-align: center;
+        width: 100%;
+        color: red;
+    }
+
     form {
-        margin-top: 1.5rem;
-        }
         input {
             border: none;
             padding: 0.3rem 0.5rem;
@@ -133,7 +143,7 @@ const HomepageStyled = styled.header`
 
     h3 {
         font-size: 1.5rem;
-        margin-top: 5%;
+        margin-top: 3%;
         text-align: center;
         font-weight: 500;
     }
@@ -168,6 +178,10 @@ const HomepageStyled = styled.header`
                         cursor: pointer;
                         filter: brightness(120%);
                         transition: filter 0.5s;
+                    }
+
+                    &:active {
+                        transform: translateY(3px);
                     }
                 }
             }
