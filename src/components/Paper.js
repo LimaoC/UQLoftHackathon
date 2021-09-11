@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+
 import paperData from "./data.json";
 console.log(paperData);
+
+
 
 
 export default function Paper({courseCode, paper}) {
@@ -23,6 +26,7 @@ export default function Paper({courseCode, paper}) {
           })
       }, []);
 
+
       function getMax(arr){
           var max = 0;
           for (var i=0; i<arr.length; i++){
@@ -38,6 +42,7 @@ export default function Paper({courseCode, paper}) {
               return 'bestAnswer';
           }
       }
+
 
     return (
 
@@ -56,6 +61,7 @@ export default function Paper({courseCode, paper}) {
                         <h2>
                             Solutions
                         </h2>
+
                         <table className="ansTbl">
                             {
                                 paperData.answers.map(ans => {
@@ -92,6 +98,7 @@ export default function Paper({courseCode, paper}) {
 
 
                         </table>
+
 
                     </div>
                 </div>
@@ -158,7 +165,6 @@ const PaperStyled = styled.div`
     .ansTbl img {
         width: 2rem;
     }
-
 
 
 
