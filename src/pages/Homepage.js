@@ -42,8 +42,8 @@ export default function Homepage({redirect}) {
             <form action="" onSubmit={handleSubmit}>
                 <fieldset>
                     <label>
-                        <input className="search" name="search" id="searchicon" type="image" src={process.env.PUBLIC_URL + '/assets/search.svg'} name="Submit" widht="20" height="20" alt="Search" />
-                        <input className="searchfill" name="name" type="text" placeholder="Find your course..." onChange={handleValue}/>
+                        <input name="search" id="searchicon" type="image" src={process.env.PUBLIC_URL + '/assets/search.svg'} name="Submit" widht="20" height="20" alt="Search" />
+                        <input name="name" type="text" placeholder="Find your course..." onChange={handleValue}/>
                     </label>
                 </fieldset>
             </form>
@@ -124,7 +124,6 @@ export default function Homepage({redirect}) {
 
 const HomepageStyled = styled.header`
     #searchicon {
-        padding-bottom: 0px;
     }
 
     form {
@@ -132,6 +131,7 @@ const HomepageStyled = styled.header`
         input {
             border: none;
             padding: 0.3rem 0.5rem;
+            align-items: center;
         }
         fieldset {
             margin: auto;
@@ -142,7 +142,7 @@ const HomepageStyled = styled.header`
             border-color: grey;     
         }
 
-        }
+        
     }
 
     .logo {
