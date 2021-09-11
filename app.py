@@ -10,10 +10,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 @app.route("/get_courses", methods = ["GET", "POST"])
 def get_courses():
     code = request.json["courseCode"]
-    print(code)
-    is_valid = is_valid_course(code)
-    print(is_valid)
-    return jsonify(is_valid)
+    return jsonify(is_valid_course(code))
 
 
 # @app.route("/get_papers", method = ["GET", "POST"])
