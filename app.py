@@ -46,4 +46,6 @@ def get_paper():
 def serve_paper():
     file = "/papers/" + request.args.get("file")
     print(file)
+    print(THIS_FOLDER)
+    print(os.path.join(THIS_FOLDER, file)
     return send_file(os.path.join(THIS_FOLDER, file), mimetype="application/pdf", cache_timeout=0)
