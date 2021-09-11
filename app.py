@@ -7,4 +7,8 @@ CORS(app)
 
 @app.route("/get_courses", methods = ["GET", "POST"])
 def get_courses():
-    return jsonify("hello")
+    if request.method == "GET":
+        return jsonify("hello")
+    else:
+        req = request.json
+        print(req)
