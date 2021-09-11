@@ -40,7 +40,7 @@ def get_paper():
     paper = request.json["paper"].lower()
     year, sem = paper.split(" - ")
     file = f"{course_code}_{year.lower()}_sem{sem.lower()}.pdf"
-    return jsonify("lewisjluck.pythonaywhere.com/paper?file=" + file)
+    return jsonify("lewisjluck.pythonanywhere.com/paper?file=" + file)
 
 @app.route("/paper", methods = ["GET", "POST"])
 def serve_paper():
