@@ -97,16 +97,23 @@ const HomepageStyled = styled.header`
 
     form {
         margin-top: 1.5rem;
-
+        }
         input {
             border: none;
             padding: 0.3rem 0.5rem;
             width: 100%;
+            background-color: white;
         }
 
         input:focus, textarea:focus {
-                outline:none;
-            }
+            outline:none;
+            background-color: white;
+            background: white;
+        }
+        
+        input::selection {
+            text-shadow: white;
+        }
 
         fieldset {
             margin: auto;
