@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
         --white: #ffffff;
         --black: #000000;
         --aqua: #00A2C7;
+        --red: #e62645;
+        --green: #2ea836;
+        --gold: #bb9d65;
+        --orange: #EB602B;
     }
 
     * {

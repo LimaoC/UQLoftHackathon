@@ -42,7 +42,6 @@ export default function Homepage({redirect}) {
             <form action="" onSubmit={handleSubmit}>
                 <fieldset>
                     <label>
-                        {/* <img src={process.env.PUBLIC_URL + '/assets/search.svg'} /> */}
                         <input name="name" type="text" placeholder="Find your course..." onChange={handleValue}/>
                     </label>
                 </fieldset>
@@ -125,25 +124,32 @@ export default function Homepage({redirect}) {
 const HomepageStyled = styled.header`
     form {
         margin-top: 1.5rem;
-
+        }
         input {
             border: none;
             padding: 0.3rem 0.5rem;
             align-items: center;
             width: 100%;
+            background-color: white;
         }
 
         input:focus, textarea:focus {
-                outline:none;
-            }
+            outline:none;
+            background-color: white;
+            background: white;
+        }
+        
+        input::selection {
+            text-shadow: white;
+        }
 
         fieldset {
             margin: auto;
             width: 80%;
             padding: 0.5rem 0rem;
-            border-width: 4px;
+            border-width: 3px;
             border-radius: 6px;
-            border-color: grey;
+            border-color: black;
         }
     }
 
