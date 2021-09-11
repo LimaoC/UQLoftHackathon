@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default function Paper({ courseCode, paper}) {
   const [pdfData, setPdfData] = useState("");
   useEffect(() => {
-      const data = {"courseCode" : courseCode, "paperCode": paper};
+      const data = {"courseCode" : courseCode, "paper": paper};
       console.log(data);
       fetch('https://lewisjluck.pythonanywhere.com/get_paper', {
           method: "POST",
