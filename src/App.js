@@ -5,6 +5,7 @@ import Homepage from './pages/Homepage';
 import Aboutpage from './pages/Aboutpage';
 import Coursespage from './pages/Coursespage';
 import Course from './components/Course';
+import Paper from './components/Paper';
 
 export default function App() {
     const [course, setCourse] = useState("");
@@ -25,8 +26,7 @@ export default function App() {
                         {course && <Course courseCode={course} redirect={setPaper} />}
                     </Route>
                     <Route path="/courses/paper" exact>
-                        {!course && <Coursespage>}
-                        {(course && paper) && <Paper courseCode={course} paper={paper}/>}
+                        <Paper courseCode={course} paper={paper}/>
                     </Route>
                 </Switch>
         </div>
