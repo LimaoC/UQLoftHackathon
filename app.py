@@ -34,5 +34,5 @@ def get_papers():
 def get_paper():
     course_code = request.json["courseCode"]
     paper = request.json["paper"]
-    print(coure_code, paper)
+    print(course_code, paper)
     return jsonify("YOLO")
