@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
-export default function Course({ courseCode }) {
+export default function Course({ courseCode, redirect}) {
     const [info, setInfo] = useState(null);
     const data = { "courseCode": courseCode };
     useEffect(() => {
@@ -18,6 +19,14 @@ export default function Course({ courseCode }) {
                 setInfo(response)
             })
         }, []);
+
+    function handlePaperClick(e) {
+      let paper = e.target.value
+      redirect(paper)
+      let history = useHistory();
+      history.push("/courses/paper");
+    }
+
     return (
         <CourseStyled>
             {/* {info !== undefined && info.length > 0 && (<><h1>{courseCode.toUpperCase()}</h1>
@@ -32,10 +41,10 @@ export default function Course({ courseCode }) {
                     <p>{info.course_description}</p>
                     <a href={info.ecp_link}> View ECP here </a>
                     {<p> {info.papers.map((paper) =>
-                        <div>{paper.year} - {paper.semester}</div>
+                        <a onClick={handlePaperClick} id={paper.year + " " + paper.semester}>{paper.year} - {paper.semester}</div>
                     )}</p>}
                 </div>
-                    
+
                 </>
             ) : ''}
 

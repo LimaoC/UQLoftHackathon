@@ -28,11 +28,11 @@ def get_papers():
         "course_description": course_description,
         "papers": papers
     }
-    #
-    # data = {
-    #     "course_name": "Introduction to Computer Systems",
-    #     "course_description": "Richard Thomas is Cool" ,
-    #     "papers": [{"year": 2018, "sem": 2}, {"year": 2019, "sem": 1}]
-    # }
-    # print(data)
     return jsonify(data)
+
+@app.route("/get_paper", methods = ["GET", "POST"])
+def get_paper():
+    course_code = request.json["courseCode"]
+    paper = request.json["paper"]
+    print(coure_code, paper)
+    return jsonify("YOLO")
