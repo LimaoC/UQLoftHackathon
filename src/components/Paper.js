@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-
 import paperData from "./data.json";
 console.log(paperData);
-
-
 
 
 export default function Paper({courseCode, paper}) {
@@ -26,7 +23,6 @@ export default function Paper({courseCode, paper}) {
           })
       }, []);
 
-
       function getMax(arr){
           var max = 0;
           for (var i=0; i<arr.length; i++){
@@ -43,7 +39,6 @@ export default function Paper({courseCode, paper}) {
           }
       }
 
-
     return (
 
         <PaperStyled>
@@ -53,7 +48,13 @@ export default function Paper({courseCode, paper}) {
                 <h1>
                     CSSE1001 / Sem 2 2019
                 </h1>
+                <div className="paperToggle">
+                        <span style={{'background-color': '#E62645'}}>View Paper</span>
+                        <span style={{'background-color': '#EB602B'}}>View Solutions</span>
+                    </div>
                 <div className="main_cont">
+
+
                     <div className="grid-el">
                         <iframe src="https://drive.google.com/file/d/1Trt72QK0zBZUGVjB0qF7H8--xai72RNH/preview" width="640" height="480" allow="autoplay"></iframe>
                     </div>
@@ -61,7 +62,6 @@ export default function Paper({courseCode, paper}) {
                         <h2>
                             Solutions
                         </h2>
-
                         <table className="ansTbl">
                             {
                                 paperData.answers.map(ans => {
@@ -73,11 +73,21 @@ export default function Paper({courseCode, paper}) {
                                         for (let i = 0; i < ansArr.length; i++){
                                             sum = sum + ansArr[i];
                                         }
+<<<<<<< Updated upstream
                                         const fracs = [];
                                         for (let i = 0; i < ansArr.length; i++){
                                             fracs.push(ansArr[i]/sum)
                                         }
                                         console.log(fracs)
+=======
+
+                                        const fracs = [];
+                                        for (let i = 0; i < ansArr.length; i++){
+                                            fracs.push(sum)
+                                        }
+
+                                        console.log(ansArr[0])
+>>>>>>> Stashed changes
                                         }
 
                                     return (<tr className="solCont">
@@ -89,8 +99,13 @@ export default function Paper({courseCode, paper}) {
                                         <td className={getAns(bestAns, ans.eTally)}>E</td>
                                         <td className="blank">
                                             </td>
+<<<<<<< Updated upstream
                                         <td style={{padding: "0.5rem"}}><span onclick="showDistribution"><img src={process.env.PUBLIC_URL + '/assets/bar_graph.svg'} alt="" /></span></td>
                                         <td style={{padding: "0.5rem"}}><span><img src={process.env.PUBLIC_URL + '/assets/discussion.svg'} alt="" /></span></td>
+=======
+                                        <td style={{padding: "0.5rem"}} className="clickIcon"><span  onClick={showDistribution}><img src={process.env.PUBLIC_URL + '/assets/bar_graph.svg'} alt="" /></span></td>
+                                        <td style={{padding: "0.5rem"}} className="clickIcon" ><span ><img src={process.env.PUBLIC_URL + '/assets/discussion.svg'} alt="" /></span></td>
+>>>>>>> Stashed changes
                                     </tr>);
                             })
                         }
@@ -98,7 +113,6 @@ export default function Paper({courseCode, paper}) {
 
 
                         </table>
-
 
                     </div>
                 </div>
@@ -127,6 +141,20 @@ const PaperStyled = styled.div`
 
     }
 
+    .paperToggle {
+        display: inline-block;
+        margin-left: 5%;
+        margin-top: 2%;
+    }
+
+    .paperToggle span {
+        border-radius: 0.5rem;
+        margin-right: 3px;
+        color: white;
+        padding: 1rem;
+
+    }
+
     .main_cont {
         display: grid;
         grid-template-columns: 50% 50%;
@@ -140,6 +168,10 @@ const PaperStyled = styled.div`
         padding: 5%;
     }
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     .ansTbl {
         width: 100%;
     }
@@ -165,6 +197,15 @@ const PaperStyled = styled.div`
     .ansTbl img {
         width: 2rem;
     }
+
+
+    .clickIcon:hover{
+        background-color: #BB9D65;
+    }
+
+
+
+
 
 
 
