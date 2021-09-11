@@ -32,11 +32,6 @@ export default function Course({ courseCode, redirect}) {
 
     return (
         <CourseStyled>
-            {/* {info !== undefined && info.length > 0 && (<><h1>{courseCode.toUpperCase()}</h1>
-                {info.course_name}
-                {info.papers.map((paper) =>
-                    <div>{paper.year} - {paper.sem}</div>
-            )}</>)} */}
             {info ? (
                 <>
                 <div className="grid1">
@@ -124,9 +119,11 @@ const CourseStyled = styled.div`
     }
     a.ecp:hover, a.ecp:active {
         background-color: var(--orange);
+        transition: all 0.3s;
     }
     a.paper:hover, align-self.paper:active {
         background-color: var(--green);
+        transition: all 0.3s;
     }
     .grid2 {
         display: grid;
