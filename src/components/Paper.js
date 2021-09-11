@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-// import { Document } from 'react-pdf';
 
 export default function Paper({courseCode, paper}) {
   const [pdfData, setPdfData] = useState("");
@@ -23,13 +22,18 @@ export default function Paper({courseCode, paper}) {
 
     return (
         <PaperStyled>
-            {/* <h1>{pdfData}</h1> */}
-            {/* <Document file="https://www.clickdimensions.com/links/TestPDFfile.pdf" /> */}
-            hello
+            {/* <iframe
+                src={"https://docs.google.com/gview?url=" + pdfData + "&embedded=true"}
+                frameBorder="0" /> */}
+                <iframe src="https://drive.google.com/file/d/1covLxYcx06oHm8mo2abSR9BK_ahRG11a/preview" width="640" height="480" allow="autoplay"></iframe>
         </PaperStyled>
-    )
+    );
 }
 
 const PaperStyled = styled.div`
-    
+    iframe {
+        margin: 10px;
+        width: 50%;
+        height: 80vh;
+    }
 `;
