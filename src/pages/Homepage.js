@@ -131,6 +131,7 @@ const HomepageStyled = styled.header`
         input {
             border: none;
             padding: 0.3rem 0.5rem;
+            align-items: center;
         }
         fieldset {
             margin: auto;
