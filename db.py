@@ -18,11 +18,9 @@ def close_db(db):
 
 #Search for product
 def is_valid_course(query_course_code):
-    print(query_course_code)
     db = open_db()
     matches = []
     papers =  db.execute("SELECT * FROM papers WHERE course_code LIKE ?", ("%" + query_course_code.lower() + "%",)).fetchall()
-    print(papers)
     if papers:
         return True
     else:

@@ -19,10 +19,9 @@ def is_course_valid():
 
 @app.route("/get_course_info", methods = ["GET", "POST"])
 def get_papers():
-    if request.method == "POST":
-        data = {
-            "course_name": "Introduction to Computer Systems",
-            "course_description": "Richard Thomas is Cool" ,
-            "papers": [("2018", 2), ("2017", 1)]
-        }
-        return jsonify(data)
+    data = {
+        "course_name": "Introduction to Computer Systems",
+        "course_description": "Richard Thomas is Cool" ,
+        "papers": [("2018", 2), ("2017", 1)]
+    }
+    return jsonify(data)
