@@ -1,0 +1,130 @@
+{
+    "users": [
+        {"ID": 1,
+        "username": "user1",
+        "email": "user1@user.com",
+        "contributions": 120
+    },
+
+    {"ID": 2,
+        "username": "user2",
+        "email": "user2@user.com",
+        "contributions": 100
+    },
+
+    {"ID": 3,
+        "username": "user3",
+        "email": "user2@user.com",
+        "contributions": 80
+    }
+    ],
+
+    "courses": [{
+        "courseCode": "CSSE1001",
+        "courseName": "Introduction to Software Engineering"
+    },
+    {
+        "courseCode": "CSSE2010",
+        "courseName": "Introduction to Computer Systems"
+    }
+    ],
+
+    "paperList": [{
+        "paperID": 1,
+        "paperName": "csse1001_2019_s2",
+        "courseCode": "CSSE1001",
+        "pdfFile": "https://drive.google.com/file/d/1Trt72QK0zBZUGVjB0qF7H8--xai72RNH/preview"
+    },
+    {
+        "paperID": 2,
+        "paperName": "csse1001_2020_sem1",
+        "courseCode": "CSSE1001",
+        "pdfFile": "https://drive.google.com/file/d/1Trt72QK0zBZUGVjB0qF7H8--xai72RNH/preview"
+    },
+    {
+        "paperID": 3,
+        "paperName": "csse1001_2020_sem2",
+        "courseCode": "CSSE1001",
+        "pdfFile": "https://drive.google.com/file/d/1Trt72QK0zBZUGVjB0qF7H8--xai72RNH/preview"
+    }
+    ],
+
+    "answers": [{
+        "questionID": 1,
+        "paperName": "csse1001_2019_s2",
+        "courseName": "CSSE1001",
+        "aTally": 2,
+        "bTally": 4,
+        "cTally": 0,
+        "dTally": 9,
+        "eTally": 1
+        },
+    {
+        "questionID": 2,
+        "paperName": "csse1001_2019_s2",
+        "courseName": "CSSE1001",
+        "aTally": 5,
+        "bTally": 7,
+        "cTally": 0,
+        "dTally": 1,
+        "eTally": 3
+    },
+
+    {
+        "questionID": 3,
+        "paperName": "csse1001_2019_s2",
+        "courseName": "CSSE1001",
+        "aTally": 8,
+        "bTally": 2,
+        "cTally": 3,
+        "dTally": 5,
+        "eTally": 1
+    },
+
+    {
+        "questionID": 4,
+        "paperName": "csse1001_2019_s2",
+        "courseName": "CSSE1001",
+        "aTally": 6,
+        "bTally": 9,
+        "cTally": 2,
+        "dTally": 3,
+        "eTally": 1
+    },
+
+    {
+        "questionID": 5,
+        "paperName": "csse1001_2019_s2",
+        "courseName": "CSSE1001",
+        "aTally": 2,
+        "bTally": 3,
+        "cTally": 5,
+        "dTally": 1,
+        "eTally": 8
+    },
+
+    {
+        "questionID": 6,
+        "paperName": "csse1001_2019_s2",
+        "courseName": "CSSE1001",
+        "aTally": 5,
+        "bTally": 7,
+        "cTally": 0,
+        "dTally": 1,
+        "eTally": 3
+    },
+
+    {
+        "questionID": 7,
+        "paperName": "csse1001_2019_s2",
+        "courseName": "CSSE1001",
+        "aTally": 5,
+        "bTally": 2,
+        "cTally": 0,
+        "dTally": 6,
+        "eTally": 3
+    }
+
+
+    ]
+}
