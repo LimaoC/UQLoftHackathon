@@ -13,6 +13,14 @@
 - [ReactJS](https://reactjs.org/)
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 
+## Things to consider (2:18 9/12/2021):
+- connection between the the paper.js page and the links on the course page do not sync. Will need to fix this. 
+- optimisation of the .json file (particularly for answers)
+- creating the bar graph functionality
+- submitting data into the .json file (un updating concurrently)
+- Toggle between pdf view and solutions
+- Some style things
+
 ## Linking the database to the git-repository
 - TBH I don't know how this system works. Integrating with gitHub and implementing version control functionality is much harder than I thought it would be and has become extremely convoluted. Give this route a go otherwise seek other much simplier methods (i.e. using a cloud-based API thing like Fauna or Firebase) to store data.
 - However, below are some things I've tried (and seem to work?) but honestly not worth it. It's enterprise-grade SQL stuff. 
