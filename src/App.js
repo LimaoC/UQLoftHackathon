@@ -11,24 +11,30 @@ export default function App() {
     const [course, setCourse] = useState("");
     const [paper, setPaper] = useState("");
 
+    const courseList = ["csse1001", "math1051"];
+
     return (
         <div id="app" className="app">
             <Navbar />
-                <Switch>
-                    <Route path="/" exact>
-                        <Homepage redirect={setCourse}/>
+            <Switch>
+                <Route path="/" exact>
+                    <Homepage redirect={setCourse}/>
+                </Route>
+                <Route path="/about" exact>
+                    <Aboutpage />
+                </Route>
+                <Route path="/courses" exact>
+                    <Coursespage />
+                </Route>
+                {courseList.map((course) =>
+                    <Route path={"/courses/" + course} exact>
+                        <Course courseCode={course} redirect={setPaper} />
                     </Route>
-                    <Route path="/about" exact>
-                        <Aboutpage />
-                    </Route>
-                    <Route path="/courses" exact>
-                        {!course && <Coursespage />}
-                        {course && <Course courseCode={course} redirect={setPaper} />}
-                    </Route>
-                    <Route path="/courses/paper" exact>
-                        <Paper courseCode={course} paper={paper}/>
-                    </Route>
-                </Switch>
+                )}
+                <Route path="/courses/paper" exact>
+                    <Paper courseCode={course} paper={paper}/>
+                </Route>
+            </Switch>
         </div>
     );
 }
