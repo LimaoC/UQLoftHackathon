@@ -42,8 +42,8 @@ export default function Homepage({redirect}) {
             <form action="" onSubmit={handleSubmit}>
                 <fieldset>
                     <label>
-                        <input className="search" name="search" id="searchicon" type="image" src={process.env.PUBLIC_URL + '/assets/search.svg'} name="Submit" widht="20" height="20" alt="Search" />
-                        <input className="searchfill" name="name" type="text" placeholder="Find your course..." onChange={handleValue}/>
+                        <input name="search" id="searchicon" type="image" src={process.env.PUBLIC_URL + '/assets/search.svg'} name="Submit" widht="20" height="20" alt="Search" />
+                        <input name="name" type="text" placeholder="Find your course..." onChange={handleValue}/>
                     </label>
                 </fieldset>
             </form>
