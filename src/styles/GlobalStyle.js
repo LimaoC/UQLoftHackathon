@@ -7,6 +7,8 @@ const GlobalStyle = createGlobalStyle`
         --purple2: #962a8b;
         --white: #ffffff;
         --black: #000000;
+        --aqua: #00A2C7;
+        --red: #e62645;
     }
 
     * {
