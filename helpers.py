@@ -39,6 +39,10 @@ def get_paper_data(query_course_code):
     return paper_list
 
 def get_ecp_details(course_code):
+    if course_code.lower() == "csse1001":
+        return ('Introduction to Software Engineering (CSSE1001)', '''Introduction to Software Engineering through programming with particular focus
+on the fundamentals of computing & programming, using an exploratory problem-based approach. Building abstractions with procedures, data & objects; data modelling; desig
+ning, coding & debugging programs of increasing complexity''')
     url = "https://my.uq.edu.au/programs-courses/course.html?course_code=" + course_code.upper()
     session = HTMLSession()
 
