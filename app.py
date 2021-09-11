@@ -12,4 +12,4 @@ def get_courses():
     else:
         code = request.json["courseCode"]
         print(code)
-        return jsonify("hello"")
+        return jsonify("hello")
