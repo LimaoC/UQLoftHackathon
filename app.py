@@ -38,7 +38,9 @@ def get_papers():
 def get_paper():
     course_code = request.json["courseCode"].lower()
     paper = request.json["paper"].lower()
+    print(paper)
     year, sem = paper.split(" - ")
+    print(paper.split(" - "))
     file = f"{course_code}_{year.lower()}_sem{sem.lower()}.pdf"
     return jsonify("https://lewisjluck.pythonanywhere.com/paper?file=" + file)
 
