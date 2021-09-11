@@ -20,7 +20,7 @@ export default function Homepage({redirect}) {
     function handleSubmit(e) {
         e.preventDefault();
         const data = { courseCode: code };
-        fetch('https://lewisjluck.pythonanywhere.com/get_courses', {
+        fetch('https://lewisjluck.pythonanywhere.com/is_course_valid', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
