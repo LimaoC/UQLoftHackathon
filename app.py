@@ -17,7 +17,7 @@ def is_course_valid():
     return jsonify(is_valid_course(code))
 
 
-@app.route("/get_course_info", method = ["GET", "POST"])
+@app.route("/get_course_info", methods = ["GET", "POST"])
 def get_papers():
     if request.method == "POST":
         data = {
