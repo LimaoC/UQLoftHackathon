@@ -37,10 +37,10 @@ export default function Homepage({redirect}) {
             <form action="" onSubmit={handleSubmit}>
                 <fieldset>
                     <label>
-                        <input name="name" type="text" placeholder="Search..." onChange={handleValue}/>
+                        <input className="search" name="search" id="searchicon" type="image" src={process.env.PUBLIC_URL + '/assets/search.svg'} name="Submit" widht="20" height="20" alt="Search" />
+                        <input className="searchfill" name="name" type="text" placeholder="Find your course..." onChange={handleValue}/>
                     </label>
                 </fieldset>
-                <button type="submit">Submit</button>
             </form>
             <div className="wrapper">
                 <div className="left">
@@ -118,6 +118,27 @@ export default function Homepage({redirect}) {
 
 
 const HomepageStyled = styled.header`
+    #searchicon {
+        padding-top: 7px;
+        padding-bottom: -50px;
+    }
+
+    form {
+        margin-top: 1.5rem;
+        input {
+            border: none;
+        }
+        fieldset {
+            margin: auto;
+            width: 80%;
+            border-width: 4px;
+            border-radius: 6px;
+            border-color: grey;     
+        }
+
+        }
+    }
+
     .logo {
         display: block;
         margin: auto auto;
@@ -150,7 +171,7 @@ const HomepageStyled = styled.header`
     }
 
     .wrapper {
-        margin-top: 8rem; // temporary
+        /* margin-top: 8rem; // temporary */
         display: flex;
         justify-content: center;
         width: 100%;
