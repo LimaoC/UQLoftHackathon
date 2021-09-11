@@ -124,7 +124,6 @@ export default function Homepage({redirect}) {
 
 const HomepageStyled = styled.header`
     #searchicon {
-        padding-bottom: 0px;
     }
 
     form {

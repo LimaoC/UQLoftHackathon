@@ -27,15 +27,22 @@ export default function Course({ courseCode }) {
             )}</>)} */}
             {info ? (
                 <>
-                <div className="body">
-                    <h1>{courseCode}</h1><h2>{info.course_name}</h2>
-                    <p>{info.course_description}</p>
-                    <a href={info.ecp_link}> View ECP here </a>
-                    {<p> {info.papers.map((paper) =>
-                        <div>{paper.year} - {paper.semester}</div>
-                    )}</p>}
-                </div>
-                    
+                    <div className="grid">
+                        <div>
+                            <h1>{courseCode}</h1>
+                        </div>
+                        <div>
+                            <h2>{info.course_name}</h2>
+                        </div>
+                    </div>
+                    <div className="body">
+                        <p>{info.course_description}</p>
+                        <a href={info.ecp_link}> View ECP here </a>
+                        {<p> {info.papers.map((paper) =>
+                            <div>{paper.year} - {paper.semester}</div>
+                        )}</p>}
+                    </div>
+                        
                 </>
             ) : ''}
 
@@ -46,19 +53,26 @@ export default function Course({ courseCode }) {
 
 
 const CourseStyled = styled.div`
-    h1 {
-        font-size: 3rem;
-        text-align: center;
+    .grid {
+        display: grid;
         margin-top: 3rem;
+        grid-template-columns: auto auto;
+    }
+    h1 {     
+        text-align: right;
+        font-size: 3rem;
         text-transform: uppercase;
     }
     h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        font-weight: 400;
         color: var(--aqua);
+        padding-top: 14px;
     }
     .body {
-        width: 70%;
+        clear: both;
+        width: 60%;
         margin: auto;
-        text-align: center;
+        padding-top: 2rem;
     }
 `;
