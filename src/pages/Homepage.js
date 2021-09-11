@@ -1,11 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 export default function Homepage() {
+    const [value, setValue] = useState("");
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        const data = { name: value };
+        console.log(value);
+        fetch('https://lewisjluck.pythonanywhere.com/get_courses', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then(res => res.json())
+            .then(res => console.log(res));
+    }
+    function handleValue(e) {
+        setValue(e.target.value);
+    }
+
     return (
         <HomepageStyled>
             <img className="logo" src={process.env.PUBLIC_URL + '/assets/logocolour.svg'} alt="UQLoft" />
             <h2>Crowd-sourced solutions for all your papers.</h2>
+            <form action="" onSubmit={handleSubmit}>
+                <fieldset>
+                    <label>
+                        <p>Name</p>
+                        <input name="name" type="text" onChange={handleValue}/>
+                    </label>
+                </fieldset>
+                <button type="submit">Submit</button>
+            </form>
             <div className="wrapper">
                 <div className="left">
                     <h3>Popular right now</h3>
