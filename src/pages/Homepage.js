@@ -124,18 +124,19 @@ export default function Homepage({redirect}) {
 
 const HomepageStyled = styled.header`
     #searchicon {
-        padding-top: 7px;
-        padding-bottom: -50px;
+        padding-bottom: 0px;
     }
 
     form {
         margin-top: 1.5rem;
         input {
             border: none;
+            padding: 0.3rem 0.5rem;
         }
         fieldset {
             margin: auto;
             width: 80%;
+            padding: 0.5rem 0rem;
             border-width: 4px;
             border-radius: 6px;
             border-color: grey;     
@@ -184,12 +185,12 @@ const HomepageStyled = styled.header`
                 grid-template-columns: auto auto auto;
 
                 .item {
-                    background-color: var(--purple2);
+                    background-color: var(--red);
                     text-align: center;
                     font-size: 1.5rem;
                     color: var(--white);
                     border-radius: 1rem;
-                    padding: 1rem;
+                    padding: 0.5rem 0rem 0.5rem 0rem;
                     margin: 1rem;
 
                     &:hover {
