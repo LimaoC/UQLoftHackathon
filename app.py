@@ -20,9 +20,10 @@ def is_course_valid():
 @app.route("/get_course_info", methods = ["GET", "POST"])
 def get_papers():
     code = request.json["courseCode"]
-    course_name, course_description = get_ecp_details(code)
+    url, course_name, course_description = get_ecp_details(code)
     papers = get_paper_data(code)
     data = {
+        "ecp_link" : url, 
         "course_name": course_name,
         "course_description": course_description,
         "papers": papers
