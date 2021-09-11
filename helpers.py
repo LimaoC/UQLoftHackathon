@@ -1,5 +1,7 @@
 #Standard libraries
 import sqlite3
+import urllib.request
+from requests_html import HTMLSession
 
 #Dynamic pathing
 from os import path
@@ -16,7 +18,7 @@ def close_db(db):
     if db is not None:
         db.close()
 
-#Search for product
+#Check if any papers have this course title
 def is_valid_course(query_course_code):
     db = open_db()
     matches = []
@@ -25,6 +27,25 @@ def is_valid_course(query_course_code):
         return True
     else:
         return False
+
+#Get paper with this course title
+def get_paper_data(query_course_code):
+    db = open_db()
+    matches = []
+    papers =  db.execute("SELECT * FROM papers WHERE course_code LIKE ?", ("%" + query_course_code.lower() + "%",)).fetchall()
+    paper_list = []
+    for paper in papers:
+        paper_list.append({"course": paper[1], "year": paper[2], "semester": paper[3]})
+    return paper_list
+
+def get_ecp_details(course_code):
+    url = "https://my.uq.edu.au/programs-courses/course.html?course_code=" + course_code.upper()
+    session = HTMLSession()
+
+    r = session.get(url)
+    course_name = r.html.find('#course-title', first=True).text
+    course_description = r.html.find('#course-summary', first=True).text
+    return (course_name, course_description)
 
 #Add product lot
 def add_lot(product):
