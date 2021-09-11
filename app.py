@@ -48,4 +48,4 @@ def serve_paper():
     print(file)
     print(THIS_FOLDER)
     print(os.path.join(THIS_FOLDER, file))
-    return send_file(THIS_FOLDER + file), mimetype="application/pdf", cache_timeout=0)
+    return send_file(THIS_FOLDER + file, mimetype="application/pdf", cache_timeout=0)
