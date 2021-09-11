@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Document } from 'react-pdf';
+// import { Document } from 'react-pdf';
 
 export default function Paper({courseCode, paper}) {
   const [pdfData, setPdfData] = useState("");
@@ -24,7 +24,7 @@ export default function Paper({courseCode, paper}) {
     return (
         <PaperStyled>
             {/* <h1>{pdfData}</h1> */}
-            <Document file="https://www.clickdimensions.com/links/TestPDFfile.pdf" />
+            {/* <Document file="https://www.clickdimensions.com/links/TestPDFfile.pdf" /> */}
             hello
         </PaperStyled>
     )

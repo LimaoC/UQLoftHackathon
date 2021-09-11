@@ -39,7 +39,7 @@ export default function Course({ courseCode, redirect}) {
             )}</>)} */}
             {info ? (
                 <>
-                <div className="grid">
+                <div className="grid1">
                     <div>
                         <h1>{courseCode}</h1>
                     </div>
@@ -48,12 +48,19 @@ export default function Course({ courseCode, redirect}) {
                     </div>
                 </div>
                 <div className="body">
-                    <p>{info.course_description}</p>
-                    <a href={info.ecp_link}> View ECP here </a>
-                    {info.papers.map((paper) =>
-                    <div><a href="courses/paper" onClick={handlePaperClick}>{paper.year} - {paper.semester}</a> </div>
+                    <div>
+                        <h3>Course Summary: </h3>
+                        <h4>{info.course_description}</h4>
+                    </div>
+                    <a className="ecp" href={info.ecp_link}>View ECP here</a>
+                    <div>
+                        <h3>Exams: </h3>
+                        <div className="grid2">
+                            {info.papers.map((paper) =>
+                            <a className="paper" href="courses/paper" onClick={handlePaperClick}>{paper.year} - {paper.semester}</a>)}
+                        </div>
+                    </div>
                     
-                )}
                 </div>
 
                 </>
@@ -66,10 +73,10 @@ export default function Course({ courseCode, redirect}) {
 
 
 const CourseStyled = styled.div`
-    .grid {
+    .grid1 {
         display: grid;
         margin-top: 3rem;
-        grid-template-columns: auto auto;
+        grid-template-columns: 30% auto;
     }
     h1 {     
         text-align: right;
@@ -77,15 +84,54 @@ const CourseStyled = styled.div`
         text-transform: uppercase;
     }
     h2 {
+        font-size: 3rem;
+        font-weight: 300;
+        color: var(--black);
+    }
+    h3 {
         font-size: 2rem;
+        font-weight: 800;
+        margin-top: 3rem;
+    }
+    h4 {
+        font-size: 1.2rem;
         font-weight: 400;
-        color: var(--aqua);
-        padding-top: 14px;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
     }
     .body {
         clear: both;
-        width: 60%;
+        width: 70%;
         margin: auto;
         padding-top: 2rem;
+    }
+    a.ecp {
+        background-color: var(--red);
+        color: white;
+        padding: 1rem 1rem;
+        text-align: center;
+        border-radius: 0.7rem;
+        margin: 0px 0px 0px 40%;
+    }
+    a.paper {
+        background-color: var(--gold);
+        color: white;
+        padding: 0.5rem 2rem;
+        font-size: 1.5rem;
+        text-align: center;
+        border-radius: 0.7rem;
+        width: 60%;
+    }
+    a.ecp:hover, a.ecp:active {
+        background-color: var(--orange);
+    }
+    a.paper:hover, align-self.paper:active {
+        background-color: var(--green);
+    }
+    .grid2 {
+        display: grid;
+        margin-top: 1.5rem;
+        grid-template-columns: auto auto auto auto;
+        width: 100%;
     }
 `;
