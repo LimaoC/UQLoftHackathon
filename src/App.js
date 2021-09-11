@@ -8,6 +8,7 @@ import Course from './components/Course';
 
 export default function App() {
     const [course, setCourse] = useState("");
+    const [paper, setPaper] = useState("");
 
     return (
         <div id="app" className="app">
@@ -21,7 +22,11 @@ export default function App() {
                     </Route>
                     <Route path="/courses" exact>
                         {!course && <Coursespage />}
-                        {course && <Course courseCode={course} />}
+                        {course && <Course courseCode={course} redirect={setPaper} />}
+                    </Route>
+                    <Route path="/courses/paper" exact>
+                        {!course && <Coursespage>}
+                        {(course && paper) && <Paper courseCode={course} paper={paper}/>}
                     </Route>
                 </Switch>
         </div>
