@@ -5,6 +5,7 @@ export default function Paper({ courseCode, paper}) {
   const [pdfData, setPdfData] = useState("");
   useEffect(() => {
       const data = {"courseCode" : courseCode, "paperCode": paper};
+      console.log(data);
       fetch('https://lewisjluck.pythonanywhere.com/get_paper', {
           method: "POST",
           headers: {
@@ -18,4 +19,14 @@ export default function Paper({ courseCode, paper}) {
               setPdfData(response)
           })
       }, []);
+
+    return (
+        <PaperStyled>
+            <h1> BLACK</h1>
+        </PaperStyled>
+    )
 }
+
+const PaperStyled = styled.div`
+    
+`;

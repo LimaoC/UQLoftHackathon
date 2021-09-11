@@ -141,7 +141,7 @@ const HomepageStyled = styled.header`
             border-color: grey;     
         }
 
-        }
+        
     }
 
     .logo {

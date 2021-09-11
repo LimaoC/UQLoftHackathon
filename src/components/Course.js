@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 export default function Course({ courseCode, redirect}) {
     const [info, setInfo] = useState(null);
     const data = { "courseCode": courseCode };
+    let history = useHistory();
     useEffect(() => {
         fetch('https://lewisjluck.pythonanywhere.com/get_course_info', {
             method: "POST",
@@ -21,9 +22,11 @@ export default function Course({ courseCode, redirect}) {
         }, []);
 
     function handlePaperClick(e) {
-      let paper = e.target.value
-      redirect(paper)
-      let history = useHistory();
+      e.preventDefault();
+      let paper = e.target.text;
+      console.log(paper);
+      redirect(paper);
+      
       history.push("/courses/paper");
     }
 
@@ -36,13 +39,21 @@ export default function Course({ courseCode, redirect}) {
             )}</>)} */}
             {info ? (
                 <>
+                <div className="grid">
+                    <div>
+                        <h1>{courseCode}</h1>
+                    </div>
+                    <div>
+                        <h2>{info.course_name}</h2>
+                    </div>
+                </div>
                 <div className="body">
-                    <h1>{courseCode}</h1><h2>{info.course_name}</h2>
                     <p>{info.course_description}</p>
                     <a href={info.ecp_link}> View ECP here </a>
-                    {<p> {info.papers.map((paper) =>
-                        <a onClick={handlePaperClick} id={paper.year + " " + paper.semester}>{paper.year} - {paper.semester}</div>
-                    )}</p>}
+                    {info.papers.map((paper) =>
+                    <div><a href="courses/paper" onClick={handlePaperClick}>{paper.year} - {paper.semester}</a> </div>
+                    
+                )}
                 </div>
 
                 </>
