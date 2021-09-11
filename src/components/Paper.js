@@ -62,11 +62,16 @@ export default function Paper({courseCode, paper}) {
                                     const ansArr = [ans.aTally, ans.bTally, ans.cTally, ans.dTally, ans.eTally];
                                     const bestAns = getMax(ansArr);
 
-                                    function showDistribution(ansArr) {
+                                    function showDistribution() {
                                         var sum;
                                         for (let i = 0; i < ansArr.length; i++){
                                             sum = sum + ansArr[i];
                                         }
+                                        const fracs = [];
+                                        for (let i = 0; i < ansArr.length; i++){
+                                            fracs.push(ansArr[i]/sum)
+                                        }
+                                        console.log(fracs)
                                         }
 
                                     return (<tr className="solCont">
@@ -78,7 +83,7 @@ export default function Paper({courseCode, paper}) {
                                         <td className={getAns(bestAns, ans.eTally)}>E</td>
                                         <td className="blank">
                                             </td>
-                                        <td style={{padding: "0.5rem"}}><span><img src={process.env.PUBLIC_URL + '/assets/bar_graph.svg'} alt="" /></span></td>
+                                        <td style={{padding: "0.5rem"}}><span onclick="showDistribution"><img src={process.env.PUBLIC_URL + '/assets/bar_graph.svg'} alt="" /></span></td>
                                         <td style={{padding: "0.5rem"}}><span><img src={process.env.PUBLIC_URL + '/assets/discussion.svg'} alt="" /></span></td>
                                     </tr>);
                             })
@@ -128,7 +133,7 @@ const PaperStyled = styled.div`
         padding: 5%;
     }
 
-    ..ansTbl {
+    .ansTbl {
         width: 100%;
     }
 
