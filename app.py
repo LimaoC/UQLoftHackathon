@@ -12,7 +12,10 @@ def get_courses():
         return jsonify("hello")
     else:
         code = request.json["courseCode"]
-        return jsonify(is_valid_course(code))
+        print(code)
+        is_valid = is_valid_course(code)
+        print(is_valid)
+        return jsonify(is_valid)
 
 @app.route("/get_papers", method = ["GET", "POST"])
 def get_papers():
