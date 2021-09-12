@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/UQLoft/static/js/main.12e0c061.chunk.js",
-    "main.js.map": "/UQLoft/static/js/main.12e0c061.chunk.js.map",
+    "main.js": "/UQLoft/static/js/main.c0583d28.chunk.js",
+    "main.js.map": "/UQLoft/static/js/main.c0583d28.chunk.js.map",
     "runtime-main.js": "/UQLoft/static/js/runtime-main.6b6eff3a.js",
     "runtime-main.js.map": "/UQLoft/static/js/runtime-main.6b6eff3a.js.map",
     "static/js/2.2aa7a809.chunk.js": "/UQLoft/static/js/2.2aa7a809.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.6b6eff3a.js",
     "static/js/2.2aa7a809.chunk.js",
-    "static/js/main.12e0c061.chunk.js"
+    "static/js/main.c0583d28.chunk.js"
   ]
 }
