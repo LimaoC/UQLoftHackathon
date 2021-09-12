@@ -26,10 +26,10 @@ Crowd-sourced solutions for all your exam papers!
 
 | Component | Languages/tech stack |
 | --------- | -------------------- |
-| Version Control and Deployment | [GitHub](https://github.com) |
+| Version Control | [GitHub](https://github.com) |
 | Front-end Web Design | [ReactJS](https://reactjs.org/) |
 | Back-end Data Management | [Flask](https://flask.palletsprojects.com/en/2.0.x/) <br /> [JSON](https://www.json.org/json-en.html) <br /> [SQL (attempted)](https://en.wikipedia.org/wiki/SQL) |
-| Hosting | [GitHub Pages](https://pages.github.com/) <br /> [Heroku](https://heroku.com/) |
+| Deployment | [GitHub Pages](https://pages.github.com/) <br /> [Heroku](https://heroku.com/) |
 
 ## Hindsight 2020
 - Maybe don’t use React and Flask if you don’t know what you’re doing with either of them
