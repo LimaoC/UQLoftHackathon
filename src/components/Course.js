@@ -28,39 +28,27 @@ export default function Course({ courseCode, redirect }) {
       console.log(paper);
       redirect(paper);
       
-      history.push("/courses/" + courseCode + "/" + paper);
+      history.push("/courses/" + courseCode + "/papers");
     }
 
     return (
         <CourseStyled>
-            {/* {info !== undefined && info.length > 0 && (<><h1>{courseCode.toUpperCase()}</h1>
-                {info.course_name}
-                {info.papers.map((paper) =>
-                    <div>{paper.year} - {paper.sem}</div>
-            )}</>)} */}
             {info ? (
                 <>
                 <div className="grid1">
-                    <div>
-                        <h1>{courseCode}</h1>
-                    </div>
-                    <div>
-                        <h2>{info.course_name}</h2>
-                    </div>
+                    <h1>{courseCode.toUpperCase()}</h1>
+                    <h2>{info.course_name}</h2>
+                </div>
+                <div className="grid2">
+                    <h3><a href={info.ecp_link}>View ECP here</a></h3>
+                    <h4>{info.course_description}</h4>
                 </div>
                 <div className="body">
-                    <div>
-                        <h3>
-                            Course Summary (<a className="ecp" href={info.ecp_link}>View ECP here</a>)
-                        </h3>
-                        <h4>{info.course_description}</h4>
-                    </div>
-                    <div>
-                        <h3>Exams</h3>
-                        <div className="grid2">
-                            {info.papers.map((paper) =>
-                            <a className="paper" href="courses/paper" onClick={handlePaperClick}>{paper.year} Semester {paper.semester}</a>)}
-                        </div>
+                    <h3>Exams</h3>
+                    <div className="grid3">
+                        {info.papers.map((paper) =>
+                            <a className="paper" onClick={handlePaperClick}>{paper.year} Semester {paper.semester}</a>    
+                        )}
                     </div>
                 </div>
                 </>
@@ -71,6 +59,9 @@ export default function Course({ courseCode, redirect }) {
 
 
 const CourseStyled = styled.div`
+    width: 80%;
+    margin: auto;
+
     .grid1 {
         display: grid;
         margin-top: 3rem;
@@ -79,7 +70,6 @@ const CourseStyled = styled.div`
         h1 {
             text-align: right;
             font-size: 3rem;
-            text-transform: uppercase;
         }
 
         h2 {
@@ -89,53 +79,79 @@ const CourseStyled = styled.div`
         }
     }
 
-    .body {
-        clear: both;
-        width: 70%;
-        margin: auto;
-        padding-top: 2rem;
+    .grid2 {
+        display: grid;
+        margin-top: 3rem;
+        grid-template-columns: 30% auto;
 
         h3 {
-        font-size: 2rem;
-        font-weight: 400;
-        margin-top: 1rem;
+            text-align: right;
+            font-size: 2rem;
+            float: right;
+            padding: 10px;
+            font-weight: 400;
+
+            &:active {
+                    transform: translateY(3px);
+                }
+            
+            a {
+                padding: 10px;
+                background-color: var(--purple2);
+                border-radius: 0.3rem;
+                color: white;
+
+                &:hover {
+                    filter: brightness(120%);
+                    transition: 0.5s filter;
+                }
+            }
         }
 
         h4 {
             font-size: 1.2rem;
             font-weight: 400;
-            margin-top: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .paper {
-            background-color: var(--gold);
-            color: white;
-            padding: 0.5rem 2rem;
-            font-size: 1.5rem;
-            text-align: center;
-            border-radius: 0.7rem;
-            width: 60%;
-
-            &:hover {
-                filter: brightness(120%);
-                transition: filter 0.5s;
-            }
-        }
-
-        .ecp:hover {
-            color: var(--purple2);
-            transition: filter 1s;
-        }
-
-        .ecp:active, .paper:active {
-            transform: translateY(3px);
+            text-align: justify;
+            width: 80%;
         }
     }
-    .grid2 {
-        display: grid;
-        margin-top: 1.5rem;
-        grid-template-columns: auto auto auto auto;
-        width: 100%;
+
+    .body {
+        margin: auto;
+
+        h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-top: 4rem;
+        }
+
+        .grid3 {
+            display: grid;
+            margin-top: 1.5rem;
+            grid-template-columns: auto auto auto auto;
+            width: 100%;
+            justify-content: space-between;
+
+            .paper {
+                background-color: var(--gold);
+                color: white;
+                padding: 0.5rem 2rem;
+                font-size: 1rem;
+                text-align: center;
+                border-radius: 0.3rem;
+                width: 100%;
+                margin: 5px 0 5px 0;
+
+                &:hover {
+                    filter: brightness(120%);
+                    transition: filter 0.5s;
+                    cursor: pointer;
+                }
+
+                &:active {
+                    transform: translateY(3px);
+                }
+            }
+        }
     }
 `;

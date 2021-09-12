@@ -123,6 +123,72 @@
         "cTally": 0,
         "dTally": 6,
         "eTally": 3
+    },
+
+    {
+        "questionID": 8,
+        "paperName": "csse1001_2019_s2",
+        "courseName": "CSSE1001",
+        "aTally": 5,
+        "bTally": 7,
+        "cTally": 0,
+        "dTally": 1,
+        "eTally": 3
+    },
+
+    {
+        "questionID": 9,
+        "paperName": "csse1001_2019_s2",
+        "courseName": "CSSE1001",
+        "aTally": 8,
+        "bTally": 2,
+        "cTally": 3,
+        "dTally": 5,
+        "eTally": 1
+    },
+
+    {
+        "questionID": 10,
+        "paperName": "csse1001_2019_s2",
+        "courseName": "CSSE1001",
+        "aTally": 6,
+        "bTally": 9,
+        "cTally": 2,
+        "dTally": 3,
+        "eTally": 1
+    },
+
+    {
+        "questionID": 11,
+        "paperName": "csse1001_2019_s2",
+        "courseName": "CSSE1001",
+        "aTally": 2,
+        "bTally": 3,
+        "cTally": 5,
+        "dTally": 1,
+        "eTally": 8
+    },
+
+    {
+        "questionID": 12,
+        "paperName": "csse1001_2019_s2",
+        "courseName": "CSSE1001",
+        "aTally": 5,
+        "bTally": 7,
+        "cTally": 0,
+        "dTally": 1,
+        "eTally": 3
+    },
+
+    {
+        "questionID": 13,
+        "paperName": "csse1001_2019_s2",
+        "courseName": "CSSE1001",
+        "aTally": 5,
+        "bTally": 2,
+        "cTally": 0,
+        "dTally": 6,
+        "eTally": 3
     }
 
 

@@ -129,7 +129,7 @@ const HomepageStyled = styled.header`
             margin: auto;
             width: 40%;
             padding: 0.5rem 0rem;
-            border-radius: 0.5rem;
+            border-radius: 0.3rem;
             border-color: var(--black);
         }
     }
@@ -170,7 +170,7 @@ const HomepageStyled = styled.header`
                     text-align: center;
                     font-size: 1.5rem;
                     color: var(--white);
-                    border-radius: 1rem;
+                    border-radius: 0.3rem;
                     padding: 0.5rem 0rem 0.5rem 0rem;
                     margin: 1rem;
 

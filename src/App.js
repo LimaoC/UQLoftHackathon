@@ -31,9 +31,10 @@ export default function App() {
                         <Course courseCode={course} redirect={setPaper} />
                     </Route>
                 )}
-                <Route path="/courses/paper" exact>
-                    <Paper courseCode={course} paper={paper}/>
-                </Route>
+                {courseList.map((course) =>
+                    <Route path={"/courses/" + course + "/papers"} exact>
+                        <Paper courseCode={course} paper={paper} />
+                    </Route>)}
             </Switch>
         </div>
     );
