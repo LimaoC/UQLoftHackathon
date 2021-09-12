@@ -41,6 +41,6 @@ Crowd-sourced solutions for all your exam papers!
 - Greater depth of knowledge in APIs and requests
 
 
-## Usage
-- [UI/UX/Design focus](https://limaoc.github.io/UQLoft/)
-- [Functionality focus](https://uq-loft.herokuapp.com/)
+## Acces
+- [UI/UX/Design focus website](https://limaoc.github.io/UQLoft/)
+- [Functionality focus website](https://uq-loft.herokuapp.com/)
