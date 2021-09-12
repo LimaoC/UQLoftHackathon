@@ -85,15 +85,23 @@ export default function Paper({courseCode, paper}) {
                                     const bestAns = getMax(ansArr);
 
 
-                                    function showDistribution(ansArr) {
-                                        const sum =  getSum(ansArr);
-                                        var fracs = []
+                                    function showDistribution() {
+                                        const sum = ansArr.reduce((a,b) => a + b, 0);
+                                        var fracs = [];
                                         for (let i = 0; i<ansArr.length; i++){
+                                            var num = (ansArr[i]/sum);
+                                            fracs.push(num);
+                                            console.log(fracs);
+                                        }
+                                        for (let i = 0; i<fracs.length; i++){
 
-                                            fracs.push()
                                         }
+                                        console.log(sum);
                                         console.log('show distribution')
+
+                                        return fracs;
                                         }
+
 
                                     function showDiscussion(ansArr){
                                         console.log('show discussion')
