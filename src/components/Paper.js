@@ -42,6 +42,13 @@ export default function Paper({courseCode, paper}) {
               return 'bestAnswer';
           }
       }
+      function getSum(ansArr){
+        var sum;
+        for (let i = 0; i < ansArr.length; i++){
+            sum = sum + parseInt(ansArr[i], 10);
+        console.log(sum)
+        } return {sum}
+    }
 
 
     return (
@@ -53,6 +60,15 @@ export default function Paper({courseCode, paper}) {
                 <h1>
                     CSSE1001 / Sem 2 2019
                 </h1>
+                <div className="toggleButtons">
+                    <span className="toggleBtn" style={{'background-color': '#E62645'}}>
+                        View Paper
+                    </span>
+                    <span className="toggleBtn" style={{'background-color': '#EB602B'}}>
+                        View Solutions
+                    </span>
+
+                </div>
                 <div className="main_cont">
                     <div className="grid-el">
                         <iframe src="https://drive.google.com/file/d/1Trt72QK0zBZUGVjB0qF7H8--xai72RNH/preview" width="640" height="480" allow="autoplay"></iframe>
@@ -61,19 +77,27 @@ export default function Paper({courseCode, paper}) {
                         <h2>
                             Solutions
                         </h2>
-
+                        <div style={{'max-height': '550px', 'overflow': 'scroll'}}>
                         <table className="ansTbl">
                             {
                                 paperData.answers.map(ans => {
                                     const ansArr = [ans.aTally, ans.bTally, ans.cTally, ans.dTally, ans.eTally];
                                     const bestAns = getMax(ansArr);
 
+
                                     function showDistribution(ansArr) {
-                                        var sum;
-                                        for (let i = 0; i < ansArr.length; i++){
-                                            sum = sum + ansArr[i];
+                                        const sum =  getSum(ansArr);
+                                        var fracs = []
+                                        for (let i = 0; i<ansArr.length; i++){
+
+                                            fracs.push()
                                         }
+                                        console.log('show distribution')
                                         }
+
+                                    function showDiscussion(ansArr){
+                                        console.log('show discussion')
+                                    }
 
                                     return (<tr className="solCont">
                                         <td>Q{ans.questionID}</td>
@@ -84,8 +108,8 @@ export default function Paper({courseCode, paper}) {
                                         <td className={getAns(bestAns, ans.eTally)}>E</td>
                                         <td className="blank">
                                             </td>
-                                        <td style={{padding: "0.5rem"}}><span><img src={process.env.PUBLIC_URL + '/assets/bar_graph.svg'} alt="" /></span></td>
-                                        <td style={{padding: "0.5rem"}}><span><img src={process.env.PUBLIC_URL + '/assets/discussion.svg'} alt="" /></span></td>
+                                        <td style={{padding: "0.5rem"}} onClick={showDistribution}><span><img src={process.env.PUBLIC_URL + '/assets/bar_graph.svg'} alt="" /></span></td>
+                                        <td style={{padding: "0.5rem"}} onClick={showDiscussion}><span><img src={process.env.PUBLIC_URL + '/assets/discussion.svg'} alt="" /></span></td>
                                     </tr>);
                             })
                         }
@@ -93,6 +117,7 @@ export default function Paper({courseCode, paper}) {
 
 
                         </table>
+                        </div>
 
 
                     </div>
@@ -162,6 +187,18 @@ const PaperStyled = styled.div`
         width: 2rem;
     }
 
+    .toggleButtons {
+        display: 'inline-block';
+        margin-top: 2%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 
+
+    .toggleButtons span {
+        color: white;
+        padding: 1rem;
+        font-size: 20px;
+    }
 
 `;
