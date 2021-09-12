@@ -30,7 +30,7 @@ export default function Homepage({redirect}) {
     function handleSubmit(e) {
         e.preventDefault();
         const data = { courseCode: code };
-        fetch('https://lewisjluck.pythonanywhere.com/is_course_valid', {
+        fetch('https://uq-loft.herokuapp.com/is_course_valid', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -80,7 +80,7 @@ export default function Homepage({redirect}) {
                                     {contributor.Name}
                                 </div>
                                 <div className="posts">
-                                    {contributor.Posts}
+                                    {contributor.Posts} posts
                                 </div>
                             </li>
                         )}

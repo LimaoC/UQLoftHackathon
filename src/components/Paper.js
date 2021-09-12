@@ -9,7 +9,7 @@ export default function Paper({courseCode, paper}) {
   useEffect(() => {
       const data = {"courseCode" : courseCode, "paper": paper};
       console.log(data);
-      fetch('https://lewisjluck.pythonanywhere.com/get_paper', {
+      fetch('https://uq-loft.herokuapp.com/get_paper', {
           method: "POST",
           headers: {
               "Content-type": "application/json",

@@ -8,7 +8,7 @@ export default function Course({ courseCode, redirect }) {
     let history = useHistory();
 
     useEffect(() => {
-        fetch('https://lewisjluck.pythonanywhere.com/get_course_info', {
+        fetch('https://uq-loft.herokuapp.com/get_course_info', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
