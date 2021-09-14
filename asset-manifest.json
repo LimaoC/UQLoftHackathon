@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/UQLoft/static/js/main.6a0c09be.chunk.js",
-    "main.js.map": "/UQLoft/static/js/main.6a0c09be.chunk.js.map",
-    "runtime-main.js": "/UQLoft/static/js/runtime-main.6b6eff3a.js",
-    "runtime-main.js.map": "/UQLoft/static/js/runtime-main.6b6eff3a.js.map",
-    "static/js/2.acadfe85.chunk.js": "/UQLoft/static/js/2.acadfe85.chunk.js",
-    "static/js/2.acadfe85.chunk.js.map": "/UQLoft/static/js/2.acadfe85.chunk.js.map",
-    "index.html": "/UQLoft/index.html",
-    "static/js/2.acadfe85.chunk.js.LICENSE.txt": "/UQLoft/static/js/2.acadfe85.chunk.js.LICENSE.txt"
+    "main.js": "/UQLoftHackathon/static/js/main.b786e861.chunk.js",
+    "main.js.map": "/UQLoftHackathon/static/js/main.b786e861.chunk.js.map",
+    "runtime-main.js": "/UQLoftHackathon/static/js/runtime-main.20481d18.js",
+    "runtime-main.js.map": "/UQLoftHackathon/static/js/runtime-main.20481d18.js.map",
+    "static/js/2.f66ede34.chunk.js": "/UQLoftHackathon/static/js/2.f66ede34.chunk.js",
+    "static/js/2.f66ede34.chunk.js.map": "/UQLoftHackathon/static/js/2.f66ede34.chunk.js.map",
+    "index.html": "/UQLoftHackathon/index.html",
+    "static/js/2.f66ede34.chunk.js.LICENSE.txt": "/UQLoftHackathon/static/js/2.f66ede34.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6b6eff3a.js",
-    "static/js/2.acadfe85.chunk.js",
-    "static/js/main.6a0c09be.chunk.js"
+    "static/js/runtime-main.20481d18.js",
+    "static/js/2.f66ede34.chunk.js",
+    "static/js/main.b786e861.chunk.js"
   ]
 }
