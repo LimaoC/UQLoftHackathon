@@ -1,6 +1,6 @@
 # UQLoft
 
-<img src="https://github.com/LimaoC/UQLoft/blob/master/mock-ups/UQLoft_Banner.png" alt="UQLoft"/>
+<img src="https://github.com/LimaoC/UQLoftHackathon/blob/master/mock-ups/UQLoft_Banner.png" alt="UQLoft"/>
 
 Crowd-sourced solutions for all your exam papers!
 
